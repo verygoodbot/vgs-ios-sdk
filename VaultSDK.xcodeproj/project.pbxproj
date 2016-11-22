@@ -10,6 +10,7 @@
 		D8A1FB9A1DE4F68900D5F3F9 /* VaultSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1FB901DE4F68800D5F3F9 /* VaultSDK.framework */; };
 		D8A1FB9F1DE4F68900D5F3F9 /* VaultSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1FB9E1DE4F68900D5F3F9 /* VaultSDKTests.swift */; };
 		D8A1FBA11DE4F68900D5F3F9 /* VaultSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = D8A1FB931DE4F68800D5F3F9 /* VaultSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8A1FBAB1DE4F85700D5F3F9 /* VaultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1FBAA1DE4F85700D5F3F9 /* VaultAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		D8A1FB991DE4F68900D5F3F9 /* VaultSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VaultSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A1FB9E1DE4F68900D5F3F9 /* VaultSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultSDKTests.swift; sourceTree = "<group>"; };
 		D8A1FBA01DE4F68900D5F3F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8A1FBAA1DE4F85700D5F3F9 /* VaultAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaultAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				D8A1FB931DE4F68800D5F3F9 /* VaultSDK.h */,
+				D8A1FBAA1DE4F85700D5F3F9 /* VaultAPI.swift */,
 				D8A1FB941DE4F68800D5F3F9 /* Info.plist */,
 			);
 			path = VaultSDK;
@@ -149,6 +152,7 @@
 					D8A1FB8F1DE4F68800D5F3F9 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = APW3HP5W5M;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					D8A1FB981DE4F68900D5F3F9 = {
@@ -198,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A1FBAB1DE4F85700D5F3F9 /* VaultAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +327,7 @@
 		D8A1FBA51DE4F68900D5F3F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = APW3HP5W5M;
@@ -334,6 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.verygoodsecurity.VaultSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +348,7 @@
 		D8A1FBA61DE4F68900D5F3F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = APW3HP5W5M;
@@ -360,6 +368,7 @@
 		D8A1FBA81DE4F68900D5F3F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = APW3HP5W5M;
 				INFOPLIST_FILE = VaultSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +381,7 @@
 		D8A1FBA91DE4F68900D5F3F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = APW3HP5W5M;
 				INFOPLIST_FILE = VaultSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -400,6 +410,7 @@
 				D8A1FBA61DE4F68900D5F3F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8A1FBA71DE4F68900D5F3F9 /* Build configuration list for PBXNativeTarget "VaultSDKTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +419,7 @@
 				D8A1FBA91DE4F68900D5F3F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
