@@ -28,28 +28,43 @@ public class VaultAPI: NSObject {
 
     /// Create a token for given senstive data
     ///  - Parameters payload: the payload of senstive data to be tokenlized
-    ///  - Parameters success: the callback to be called with token data when we create successfully
     ///  - Parameters failure: the callback to be called with error when we failed to create
+    ///  - Parameters success: the callback to be called with token data when we create successfully
     public func createToken(
-        payload: AnyObject,
-        success: @escaping ([String: AnyObject]) -> Void,
-        failure: @escaping (NSError) -> Void
-    ) throws {
+        payload: Any,
+        failure: @escaping (NSError) -> Void,
+        success: @escaping ([String: AnyObject]) -> Void
+    ) throws -> URLSessionTask {
         let jsonObj: [String: AnyObject] = [
             "raw": payload as AnyObject
         ]
-        let request = try makeRequest(method: "POST", path: "/tokens", jsonObj: jsonObj as AnyObject?)
-        urlSession.dataTask(with: request!) { (data, response, error) in
+        let request = try makeRequest(method: "POST", path: "/tokens", jsonObj: jsonObj)
+        let task = urlSession.dataTask(with: request!) { (data, response, error) in
             if let error = error {
                 // TODO: convert the error here
                 failure(error as NSError)
                 return
             }
-            // TODO: call success callback function here
+            // TODO: check status code
+            guard let data = data else {
+                failure(NSError(domain: "", code: 0, userInfo: nil))
+                return
+            }
+            let jsonObj: Any
+            do {
+                jsonObj = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            } catch {
+                // TODO:
+                failure(NSError(domain: "", code: 0, userInfo: nil))
+                return
+            }
+            success(jsonObj as! [String: AnyObject])
         }
+        task.resume()
+        return task
     }
 
-    private func makeRequest(method: String, path: String, jsonObj: AnyObject?) throws -> URLRequest? {
+    private func makeRequest(method: String, path: String, jsonObj: Any?) throws -> URLRequest? {
         guard let url = baseURL.appendingPathComponent(path) else {
             return nil
         }
@@ -59,6 +74,9 @@ public class VaultAPI: NSObject {
         if let obj = jsonObj {
             request.httpBody = try JSONSerialization.data(withJSONObject: obj, options: .init(rawValue: 0))
         }
+        let basicAuth = "\(publishableKey):".data(using: .utf8)!.base64EncodedString()
+        request.addValue("Basic \(basicAuth)", forHTTPHeaderField: "Authorization")
+        print("****** Basic \(basicAuth)")
         return request as URLRequest
     }
 }

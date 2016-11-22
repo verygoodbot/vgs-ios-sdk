@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D8A1FB9A1DE4F68900D5F3F9 /* VaultSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1FB901DE4F68800D5F3F9 /* VaultSDK.framework */; };
-		D8A1FB9F1DE4F68900D5F3F9 /* VaultSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1FB9E1DE4F68900D5F3F9 /* VaultSDKTests.swift */; };
 		D8A1FBA11DE4F68900D5F3F9 /* VaultSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = D8A1FB931DE4F68800D5F3F9 /* VaultSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8A1FBAB1DE4F85700D5F3F9 /* VaultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1FBAA1DE4F85700D5F3F9 /* VaultAPI.swift */; };
+		D8A1FBAE1DE5098900D5F3F9 /* AcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1FBAD1DE5098900D5F3F9 /* AcceptanceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +28,9 @@
 		D8A1FB931DE4F68800D5F3F9 /* VaultSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VaultSDK.h; sourceTree = "<group>"; };
 		D8A1FB941DE4F68800D5F3F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8A1FB991DE4F68900D5F3F9 /* VaultSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VaultSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8A1FB9E1DE4F68900D5F3F9 /* VaultSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultSDKTests.swift; sourceTree = "<group>"; };
 		D8A1FBA01DE4F68900D5F3F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8A1FBAA1DE4F85700D5F3F9 /* VaultAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaultAPI.swift; sourceTree = "<group>"; };
+		D8A1FBAD1DE5098900D5F3F9 /* AcceptanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptanceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +83,18 @@
 		D8A1FB9D1DE4F68900D5F3F9 /* VaultSDKTests */ = {
 			isa = PBXGroup;
 			children = (
-				D8A1FB9E1DE4F68900D5F3F9 /* VaultSDKTests.swift */,
+				D8A1FBAC1DE5095F00D5F3F9 /* Acceptance */,
 				D8A1FBA01DE4F68900D5F3F9 /* Info.plist */,
 			);
 			path = VaultSDKTests;
+			sourceTree = "<group>";
+		};
+		D8A1FBAC1DE5095F00D5F3F9 /* Acceptance */ = {
+			isa = PBXGroup;
+			children = (
+				D8A1FBAD1DE5098900D5F3F9 /* AcceptanceTests.swift */,
+			);
+			name = Acceptance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8A1FB9F1DE4F68900D5F3F9 /* VaultSDKTests.swift in Sources */,
+				D8A1FBAE1DE5098900D5F3F9 /* AcceptanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
