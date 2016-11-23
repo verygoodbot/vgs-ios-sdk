@@ -1,5 +1,7 @@
 # vgs-ios-sdk
-Very Good Security iOS SDK
+[![Build Status](https://travis-ci.org/verygoodsecurity/vgs-ios-sdk.svg?branch=rewrite)](https://travis-ci.org/verygoodsecurity/vgs-ios-sdk)
+
+Very Good Security Vault iOS SDK
 
 ## Usage example in Swift 3.0
 
