@@ -12,7 +12,23 @@
 		D8D574251DE59302000D35F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D574231DE59302000D35F7 /* Main.storyboard */; };
 		D8D574271DE59302000D35F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D574261DE59302000D35F7 /* Assets.xcassets */; };
 		D8D5742A1DE59302000D35F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D574281DE59302000D35F7 /* LaunchScreen.storyboard */; };
+		D8D574321DE636AF000D35F7 /* VaultSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D574311DE636AF000D35F7 /* VaultSDK.framework */; };
+		D8D574331DE636AF000D35F7 /* VaultSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8D574311DE636AF000D35F7 /* VaultSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D8D574341DE636AF000D35F7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D8D574331DE636AF000D35F7 /* VaultSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D8D5741C1DE59302000D35F7 /* VaultSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VaultSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +38,7 @@
 		D8D574261DE59302000D35F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8D574291DE59302000D35F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8D5742B1DE59302000D35F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8D574311DE636AF000D35F7 /* VaultSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VaultSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D574321DE636AF000D35F7 /* VaultSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +58,7 @@
 			children = (
 				D8D5741E1DE59302000D35F7 /* VaultSDKExample */,
 				D8D5741D1DE59302000D35F7 /* Products */,
+				D8D574351DE636B5000D35F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +83,14 @@
 			path = VaultSDKExample;
 			sourceTree = "<group>";
 		};
+		D8D574351DE636B5000D35F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8D574311DE636AF000D35F7 /* VaultSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +101,7 @@
 				D8D574181DE59302000D35F7 /* Sources */,
 				D8D574191DE59302000D35F7 /* Frameworks */,
 				D8D5741A1DE59302000D35F7 /* Resources */,
+				D8D574341DE636AF000D35F7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
