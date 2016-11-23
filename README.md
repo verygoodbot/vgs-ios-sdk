@@ -1,6 +1,7 @@
 # vgs-ios-sdk
 [![Build Status](https://travis-ci.org/verygoodsecurity/vgs-ios-sdk.svg?branch=rewrite)](https://travis-ci.org/verygoodsecurity/vgs-ios-sdk)
 [![CocoaPods](https://img.shields.io/cocoapods/v/VaultSDK.svg)]()
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/verygoodsecurity/vgs-ios-sdk)
 [![license](https://img.shields.io/github/license/verygoodsecurity/vgs-ios-sdk.svg)]()
 
 Very Good Security Vault iOS SDK
