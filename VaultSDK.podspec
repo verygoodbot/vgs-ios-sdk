@@ -12,4 +12,7 @@ Pod::Spec.new do |spec|
     tag: "v#{spec.version}"
   }
   spec.source_files = 'VaultSDK/**.swift', 'VaultSDK/**/*.swift'
+  spec.pod_target_xcconfig = {
+    'SWIFT_VERSION' => '3.0'
+  }
 end
