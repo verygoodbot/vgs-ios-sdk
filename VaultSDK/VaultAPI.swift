@@ -54,7 +54,7 @@ public class VaultAPI: NSObject {
     ///  - Returns: the URLSessionTask for outgoing HTTP request
     @discardableResult
     public func createToken(
-        payload: Any,
+        payload: String,
         failure: @escaping (NSError) -> Void,
         success: @escaping ([String: AnyObject]) -> Void
     ) throws -> URLSessionTask {
