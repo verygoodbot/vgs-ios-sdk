@@ -59,10 +59,10 @@ pod 'VaultSDK', '~> 1.0'
 
 ## Install via Carthage
 
-To install the VaultSDK via [Carthage](https://github.com/Carthage/Carthage), put following line in your Podfile
+To install the VaultSDK via [Carthage](https://github.com/Carthage/Carthage), put following line in your Cartfile
 
 ```
-pod 'VaultSDK', '~> 1.0'
+github "verygoodsecurity/vgs-ios-sdk" ~> 1.0
 ```
 
 ## Run example app
