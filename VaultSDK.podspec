@@ -1,28 +1,18 @@
-Pod::Spec.new do |s|
-  s.name         = "VaultSDK"
-
-  s.version      = "0.1.0"
-
-  s.summary      = "Vault SDK."
-
-  s.description  = "SDK for credit card tokenization via Vault "
-
-  s.homepage     = "https://github.com/williamlocke/vault-ios-sdk"
-
-  s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
-
-  s.author       = { "williamlocke" => "williamlocke@me.com" }
-
-  s.source       = { :git => "https://github.com/williamlocke/vault-ios-sdk.git", :tag => s.version.to_s }
-
-  s.platform     = :ios, '8.0'
-  
-  s.dependency 'ATNetworking'
-  
-  s.resources = '{Vault.podspec}'  
-
-  s.source_files =  'Classes/**/*.[h,m]'
-  
-  s.requires_arc = true
-
+Pod::Spec.new do |spec|
+  spec.name         = 'VaultSDK'
+  spec.version      = '1.0.0-alpha-2'
+  spec.summary      = 'Very Good Security Vault iOS SDK for tokenizing senstive data'
+  spec.homepage     = 'https://github.com/verygoodsecurity/vgs-ios-sdk'
+  spec.license      = 'MIT'
+  spec.license      = { type: 'MIT', file: 'LICENSE' }
+  spec.author       = { 'Fang-Pen Lin' => 'hello@fangpenlin.com' }
+  spec.platform     = :ios, '8.0'
+  spec.source       = {
+    git: 'https://github.com/verygoodsecurity/vgs-ios-sdk.git',
+    tag: "v#{spec.version}"
+  }
+  spec.source_files = 'VaultSDK/**.swift', 'VaultSDK/**/*.swift'
+  spec.pod_target_xcconfig = {
+    'SWIFT_VERSION' => '3.0'
+  }
 end

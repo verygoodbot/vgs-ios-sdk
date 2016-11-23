@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VaultSDKExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senstive data" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48v-Ys-CQa">
+                                <rect key="frame" x="36" y="80" width="222" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRI-Q8-ioQ">
+                                <rect key="frame" x="278" y="80" width="61" height="30"/>
+                                <state key="normal" title="Tokenize"/>
+                                <connections>
+                                    <action selector="tokenizeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EUB-P6-d02"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Token" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mFF-Sa-xPm">
+                                <rect key="frame" x="36" y="140" width="303" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="dRI-Q8-ioQ" secondAttribute="trailing" constant="20" id="78D-Md-nyk"/>
+                            <constraint firstItem="mFF-Sa-xPm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Dfd-R7-6Eg"/>
+                            <constraint firstItem="48v-Ys-CQa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="JK5-gd-hkq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mFF-Sa-xPm" secondAttribute="trailing" constant="20" id="TQA-eg-0Nc"/>
+                            <constraint firstItem="mFF-Sa-xPm" firstAttribute="top" secondItem="48v-Ys-CQa" secondAttribute="bottom" constant="30" id="Xtc-MN-Dja"/>
+                            <constraint firstItem="dRI-Q8-ioQ" firstAttribute="leading" secondItem="48v-Ys-CQa" secondAttribute="trailing" constant="20" id="YN8-h4-yhY"/>
+                            <constraint firstItem="dRI-Q8-ioQ" firstAttribute="centerY" secondItem="48v-Ys-CQa" secondAttribute="centerY" id="aKK-2c-Ngs"/>
+                            <constraint firstItem="48v-Ys-CQa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="gIh-us-kgS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="senstiveDataField" destination="48v-Ys-CQa" id="Nwp-vp-OW7"/>
+                        <outlet property="tokenResultField" destination="mFF-Sa-xPm" id="hhJ-Sf-UxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
