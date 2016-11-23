@@ -62,7 +62,7 @@ class AcceptanceTests: XCTestCase {
                     exp.fulfill()
                 },
                 success: { token in
-                    XCTFail("Should not get valid result")
+                    XCTFail("Should bad response")
                     exp.fulfill()
                 }
             )
