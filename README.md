@@ -51,7 +51,15 @@ VaultAPI *api = [[VaultAPI alloc] initWithBaseURL:[NSURL URLWithString:@"https:/
 
 ## Install via CocoaPods
 
-To install the VaultSDK via CocoaPods, put following line in your Podfile
+To install the VaultSDK via [CocoaPods](https://cocoapods.org), put following line in your Podfile
+
+```
+pod 'VaultSDK', '~> 1.0'
+```
+
+## Install via Carthage
+
+To install the VaultSDK via [Carthage](https://github.com/Carthage/Carthage), put following line in your Podfile
 
 ```
 pod 'VaultSDK', '~> 1.0'
