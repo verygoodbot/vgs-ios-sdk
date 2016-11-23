@@ -1,5 +1,7 @@
 # Vault iOS SDK 
 
+[![CircleCI](https://circleci.com/gh/verygoodsecurity/vgs-ios-sdk.svg?style=svg)](https://circleci.com/gh/verygoodsecurity/vgs-ios-sdk)
+
 Objective-C SDK for consuming vault api. 
 
 Usage
