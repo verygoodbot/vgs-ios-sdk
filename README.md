@@ -3,6 +3,10 @@
 
 Very Good Security Vault iOS SDK
 
+## Requirements
+
+This SDK is written in Swift 3.0, it requires Xcode 8.0 or above.
+
 ## Usage example in Swift 3.0
 
 ```Swift
@@ -50,3 +54,7 @@ To install the VaultSDK via CocoaPods, put following line in your Podfile
 ```
 pod 'VaultSDK', '~> 1.0'
 ```
+
+## Run example app
+
+Open `VaultSDK.xcworkspace` with Xcode, select target `VaultSDKExample` and a simulator then run it via CMD + R.
