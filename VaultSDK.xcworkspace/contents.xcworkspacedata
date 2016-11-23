@@ -4,4 +4,7 @@
    <FileRef
       location = "container:VaultSDK.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:VaultSDKExample/VaultSDKExample.xcodeproj">
+   </FileRef>
 </Workspace>
