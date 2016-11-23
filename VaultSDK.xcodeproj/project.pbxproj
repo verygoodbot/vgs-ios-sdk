@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D854FFB61DE548EB00DAAAB1 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854FFB51DE548EB00DAAAB1 /* Errors.swift */; };
 		D8A1FB9A1DE4F68900D5F3F9 /* VaultSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1FB901DE4F68800D5F3F9 /* VaultSDK.framework */; };
 		D8A1FBA11DE4F68900D5F3F9 /* VaultSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = D8A1FB931DE4F68800D5F3F9 /* VaultSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8A1FBAB1DE4F85700D5F3F9 /* VaultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1FBAA1DE4F85700D5F3F9 /* VaultAPI.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D854FFB51DE548EB00DAAAB1 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		D8A1FB901DE4F68800D5F3F9 /* VaultSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VaultSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A1FB931DE4F68800D5F3F9 /* VaultSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VaultSDK.h; sourceTree = "<group>"; };
 		D8A1FB941DE4F68800D5F3F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				D8A1FB931DE4F68800D5F3F9 /* VaultSDK.h */,
+				D854FFB51DE548EB00DAAAB1 /* Errors.swift */,
 				D8A1FBAA1DE4F85700D5F3F9 /* VaultAPI.swift */,
 				D8A1FB941DE4F68800D5F3F9 /* Info.plist */,
 			);
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D854FFB61DE548EB00DAAAB1 /* Errors.swift in Sources */,
 				D8A1FBAB1DE4F85700D5F3F9 /* VaultAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

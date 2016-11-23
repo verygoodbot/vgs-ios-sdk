@@ -8,7 +8,16 @@
 
 import Foundation
 
+@objc
+public enum VaultAPIError: Int {
+    case noData
+    case invalidData
+    case badResponse
+}
+
 public class VaultAPI: NSObject {
+    static let errorDomainSuffix = ".valut-api"
+
     /// Base URL to the API server
     public var baseURL: NSURL
     /// The publishable key for tokenlizing senstive data to be stored in the vault
@@ -30,6 +39,8 @@ public class VaultAPI: NSObject {
     ///  - Parameters payload: the payload of senstive data to be tokenlized
     ///  - Parameters failure: the callback to be called with error when we failed to create
     ///  - Parameters success: the callback to be called with token data when we create successfully
+    ///  - Returns: the URLSessionTask for outgoing HTTP request
+    @discardableResult
     public func createToken(
         payload: Any,
         failure: @escaping (NSError) -> Void,
@@ -41,21 +52,26 @@ public class VaultAPI: NSObject {
         let request = try makeRequest(method: "POST", path: "/tokens", jsonObj: jsonObj)
         let task = urlSession.dataTask(with: request!) { (data, response, error) in
             if let error = error {
-                // TODO: convert the error here
                 failure(error as NSError)
                 return
             }
-            // TODO: check status code
+            let httpResponse = response as! HTTPURLResponse
+            guard httpResponse.statusCode < 400 else {
+                failure(VaultAPI.createError(
+                    error: .badResponse,
+                    userInfo: ["status_code": NSNumber(integerLiteral: httpResponse.statusCode)]
+                ))
+                return
+            }
             guard let data = data else {
-                failure(NSError(domain: "", code: 0, userInfo: nil))
+                failure(VaultAPI.createError(error: .noData))
                 return
             }
             let jsonObj: Any
             do {
                 jsonObj = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
             } catch {
-                // TODO:
-                failure(NSError(domain: "", code: 0, userInfo: nil))
+                failure(VaultAPI.createError(error: .invalidData))
                 return
             }
             success(jsonObj as! [String: AnyObject])
@@ -76,7 +92,17 @@ public class VaultAPI: NSObject {
         }
         let basicAuth = "\(publishableKey):".data(using: .utf8)!.base64EncodedString()
         request.addValue("Basic \(basicAuth)", forHTTPHeaderField: "Authorization")
-        print("****** Basic \(basicAuth)")
         return request as URLRequest
+    }
+
+    private static func createError(
+        error: VaultAPIError,
+        userInfo: [String: AnyObject]? = nil
+    ) -> NSError {
+        return NSError(
+            domain: VaultError.errorDomain + errorDomainSuffix,
+            code: error.rawValue,
+            userInfo: userInfo
+        )
     }
 }
