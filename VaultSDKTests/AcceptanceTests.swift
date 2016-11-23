@@ -11,7 +11,7 @@ import XCTest
 @testable import VaultSDK
 
 class AcceptanceTests: XCTestCase {
-    static let baseURL = NSURL(string: "https://demo.sandbox.verygoodvault.com")!
+    static let baseURL = URL(string: "https://demo.sandbox.verygoodvault.com")!
     static let publishableKey = "demo-user"
 
     override func setUp() {

@@ -31,14 +31,14 @@ public class VaultAPI: NSObject {
     }()
 
     /// Base URL to the API server
-    public var baseURL: NSURL
+    public var baseURL: URL
     /// The publishable key for tokenlizing senstive data to be stored in the vault
     public var publishableKey: String
     /// The URL session to be used for making HTTP requests
     public var urlSession: URLSession
 
     public init(
-        baseURL: NSURL,
+        baseURL: URL,
         publishableKey: String,
         urlSession: URLSession = URLSession.shared
     ) {
@@ -93,10 +93,7 @@ public class VaultAPI: NSObject {
     }
 
     private func makeRequest(method: String, path: String, jsonObj: Any?) throws -> URLRequest? {
-        guard let url = baseURL.appendingPathComponent(path) else {
-            return nil
-        }
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: baseURL.appendingPathComponent(path))
         request.httpMethod = method
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         if let obj = jsonObj {
