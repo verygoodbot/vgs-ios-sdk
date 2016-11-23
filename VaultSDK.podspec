@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'VaultSDK'
-  spec.version      = '1.0.0-alpha-1'
+  spec.version      = '1.0.0-alpha-2'
   spec.summary      = 'Very Good Security Vault iOS SDK for tokenizing senstive data'
   spec.homepage     = 'https://github.com/victorlin/vgs-ios-sdk'
   spec.license      = 'MIT'
