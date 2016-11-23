@@ -29,6 +29,8 @@ Import the SDK like this
 @import VaultSDK;
 ```
 
+then
+
 ```ObjectiveC
 VaultAPI *api = [[VaultAPI alloc] initWithBaseURL:[NSURL URLWithString:@"https://demo.sandbox.verygoodvault.com"] publishableKey:@"demo-user" urlSession:[NSURLSession sharedSession]];
 
