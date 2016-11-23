@@ -18,6 +18,18 @@ public enum VaultAPIError: Int {
 public class VaultAPI: NSObject {
     static let errorDomainSuffix = ".valut-api"
 
+    /// Version of framework
+    static var frameworkVersion: String? = {
+        let bundle = Bundle(for: VaultAPI.self)
+        return bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+    }()
+
+    /// Build of framework
+    static var frameworkBuild: String? = {
+        let bundle = Bundle(for: VaultAPI.self)
+        return bundle.object(forInfoDictionaryKey: "CFBundleVersion") as? String
+    }()
+
     /// Base URL to the API server
     public var baseURL: NSURL
     /// The publishable key for tokenlizing senstive data to be stored in the vault
@@ -89,6 +101,12 @@ public class VaultAPI: NSObject {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         if let obj = jsonObj {
             request.httpBody = try JSONSerialization.data(withJSONObject: obj, options: .init(rawValue: 0))
+        }
+        if let version = VaultAPI.frameworkVersion, let build = VaultAPI.frameworkBuild {
+            request.addValue(
+                "Vault-iOS-SDK/\(version) (build \(build))",
+                forHTTPHeaderField: "User-Agent"
+            )
         }
         let basicAuth = "\(publishableKey):".data(using: .utf8)!.base64EncodedString()
         request.addValue("Basic \(basicAuth)", forHTTPHeaderField: "Authorization")
