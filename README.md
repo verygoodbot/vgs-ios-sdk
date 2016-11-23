@@ -10,7 +10,7 @@ let api = VaultAPI(
     baseURL: URL(string: "https://demo.sandbox.verygoodvault.com")!,
     publishableKey: "demo-user"
 )
-try! api.createToken(
+api.createToken(
     payload: "4111111111111111",
     failure: { error in
         // Handle the error here
@@ -34,8 +34,7 @@ then
 ```ObjectiveC
 VaultAPI *api = [[VaultAPI alloc] initWithBaseURL:[NSURL URLWithString:@"https://demo.sandbox.verygoodvault.com"] publishableKey:@"demo-user" urlSession:[NSURLSession sharedSession]];
 
-NSError *exception;
-[api createTokenWithPayload:@"foobar" error:&exception failure:^(NSError * _Nonnull error) {
+[api createTokenWithPayload:@"foobar" failure:^(NSError * _Nonnull error) {
     // Handle the error here
 } success:^(NSDictionary<NSString *,id> * _Nonnull token) {
     // Use the token here

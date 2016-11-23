@@ -25,26 +25,22 @@ class AcceptanceTests: XCTestCase {
         )
 
         let exp = expectation(description: "token created")
-        do {
-            try api.createToken(
-                payload: "4111111111111111",
-                failure: { error in
-                    XCTFail("Failed to create token, error=\(error)")
-                    exp.fulfill()
-                },
-                success: { token in
-                    if let id = token["id"] as? String {
-                        XCTAssert(id.hasPrefix("tok_"))
-                    } else {
-                        XCTFail("No token created")
-                    }
-                    exp.fulfill()
+        api.createToken(
+            payload: "4111111111111111",
+            failure: { error in
+                XCTFail("Failed to create token, error=\(error)")
+                exp.fulfill()
+            },
+            success: { token in
+                if let id = token["id"] as? String {
+                    XCTAssert(id.hasPrefix("tok_"))
+                } else {
+                    XCTFail("No token created")
                 }
-            )
-            waitForExpectations(timeout: 10, handler: nil)
-        } catch {
-            XCTFail("Failed to create token, error=\(error)")
-        }
+                exp.fulfill()
+            }
+        )
+        waitForExpectations(timeout: 10, handler: nil)
     }
 
     func testCreateTokenWithBadKey() {
@@ -53,22 +49,18 @@ class AcceptanceTests: XCTestCase {
             publishableKey: "bad key"
         )
         let exp = expectation(description: "token creation failed")
-        do {
-            try api.createToken(
-                payload: "4111111111111111",
-                failure: { error in
-                    XCTAssertEqual(error.code, VaultAPIError.badResponse.rawValue)
-                    XCTAssertEqual((error.userInfo["status_code"] as? NSNumber)?.intValue, 401)
-                    exp.fulfill()
-                },
-                success: { token in
-                    XCTFail("Should bad response")
-                    exp.fulfill()
-                }
-            )
-            waitForExpectations(timeout: 10, handler: nil)
-        } catch {
-            XCTFail("Failed to create token, error=\(error)")
-        }
+        api.createToken(
+            payload: "4111111111111111",
+            failure: { error in
+                XCTAssertEqual(error.code, VaultAPIError.badResponse.rawValue)
+                XCTAssertEqual((error.userInfo["status_code"] as? NSNumber)?.intValue, 401)
+                exp.fulfill()
+            },
+            success: { token in
+                XCTFail("Should bad response")
+                exp.fulfill()
+            }
+        )
+        waitForExpectations(timeout: 10, handler: nil)
     }
 }

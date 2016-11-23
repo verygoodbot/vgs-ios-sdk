@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             baseURL: URL(string: "https://demo.sandbox.verygoodvault.com")!,
             publishableKey: "demo-user"
         )
-        try! api.createToken(
+        api.createToken(
             payload: senstiveDataField.text!,
             failure: { error in
                 print("Error: \(error)")

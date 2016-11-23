@@ -57,11 +57,11 @@ public class VaultAPI: NSObject {
         payload: String,
         failure: @escaping (NSError) -> Void,
         success: @escaping ([String: AnyObject]) -> Void
-    ) throws -> URLSessionTask {
+    ) -> URLSessionTask {
         let jsonObj: [String: AnyObject] = [
             "raw": payload as AnyObject
         ]
-        let request = try makeRequest(method: "POST", path: "/tokens", jsonObj: jsonObj)
+        let request = try! makeRequest(method: "POST", path: "/tokens", jsonObj: jsonObj)
         let task = urlSession.dataTask(with: request!) { (data, response, error) in
             if let error = error {
                 failure(error as NSError)
