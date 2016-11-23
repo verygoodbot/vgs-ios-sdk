@@ -1,5 +1,6 @@
 # vgs-ios-sdk
 [![Build Status](https://travis-ci.org/verygoodsecurity/vgs-ios-sdk.svg?branch=rewrite)](https://travis-ci.org/verygoodsecurity/vgs-ios-sdk)
+[![license](https://img.shields.io/github/license/verygoodsecurity/vgs-ios-sdk.svg)]()
 
 Very Good Security Vault iOS SDK
 
