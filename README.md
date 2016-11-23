@@ -1,7 +1,7 @@
 # vgs-ios-sdk
 Very Good Security iOS SDK
 
-## Usage example in Swift
+## Usage example in Swift 3.0
 
 ```Swift
 import VaultSDK
